@@ -7,55 +7,51 @@ Console.Clear();
 
 void FillArray(string[] array)
 {
-    Console.WriteLine("Введите любые 10 комбинаций из чисел через Enter:");
+    Console.WriteLine("Введите любые 5 комбинаций из чисел через Enter:");
     for (int i = 0; i < array.Length; i++)
     {
         array[i] = Console.ReadLine();
     }
 }
 
-// string PrintArray(int[] array)
-// {
-//     string result = "";
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         result += array[i].ToString() + " ";
-//     }
-//     Console.WriteLine(result);
-//     return result;
-// }
+string[] FillNewArray(string[] array)
+{
+    int length = array.Length;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            length++;
+        }
+    }
 
-// int[] FillNewArray(int[] array)
-// {
-//     int newarraylength = 0;
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         if (array[i] > 8)
-//         {
-//             newarraylength ++;
-//         }
-//     }
+    string[] newarray = new string [5];
+    for (int i = 0, j = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            newarray[j] = array[i];
+            j++;
+        }
+    }
+    return newarray;
+}
 
-//     int[] newarray = new int [newarraylength];
-//     for (int j = 0, k = 0; j < array.Length; j++)
-//     {
-//         if (array[j] > 8)
-//         {
-//             newarray[k] = array[j];
-//             k++;
-//         }
-//     }
-//     return newarray;
-// }
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine(array[i] + " ");
+    }
+}
 
 void Demo ()
 {
-    string[] array = new string[10];
+    string[] array = new string[5];
     FillArray(array);
-    // PrintArray(array);
-    // Console.WriteLine("");
-    // FillNewArray(array);
-    // PrintArray(FillNewArray(array));
+    Console.WriteLine("");
+    FillNewArray(array);
+    PrintArray(FillNewArray(array));
 }
 
 Demo ();
