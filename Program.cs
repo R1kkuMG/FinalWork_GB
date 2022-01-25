@@ -16,16 +16,16 @@ void FillArray(string[] array)
 
 string[] FillNewArray(string[] array)
 {
-    int length = array.Length;
+    int newarraylength = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            length++;
+            newarraylength++;
         }
     }
 
-    string[] newarray = new string [5];
+    string[] newarray = new string [newarraylength];
     for (int i = 0, j = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
