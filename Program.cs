@@ -7,7 +7,7 @@ Console.Clear();
 
 void FillArray(string[] array)
 {
-    Console.WriteLine("Введите любые 5 комбинаций из чисел через Enter:");
+    Console.WriteLine("Введите любые 5 комбинаций из букв или чисел через Enter:");
     for (int i = 0; i < array.Length; i++)
     {
         array[i] = Console.ReadLine();
