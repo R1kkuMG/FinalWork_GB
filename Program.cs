@@ -50,7 +50,6 @@ void Demo ()
     string[] array = new string[5];
     FillArray(array);
     Console.WriteLine("");
-    FillNewArray(array);
     PrintArray(FillNewArray(array));
 }
 
